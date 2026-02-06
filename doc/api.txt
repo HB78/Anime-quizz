@@ -1,0 +1,11 @@
+// Récupère tous types mélangés (50 par défaut)
+fetch("/api/themes");
+
+// Seulement des animes (30 items)
+fetch("/api/themes?type=anime&limit=30");
+
+// Seulement des séries (20 items)
+fetch("/api/themes?type=tv&limit=20");
+
+// Seulement des films (40 items)
+fetch("/api/themes?type=movie&limit=40");

@@ -1,0 +1,99 @@
+import { TransformedAnime, TransformedOpening } from "@/types";
+
+interface ApiVideo {
+  resolution: number;
+  source: string;
+  link: string;
+  tags: {
+    nc: boolean;
+    subbed: boolean;
+    lyrics: boolean;
+    uncen: boolean;
+  };
+}
+
+interface ApiThemeEntry {
+  videos: ApiVideo[];
+}
+
+interface ApiArtist {
+  name: string;
+}
+
+interface ApiSong {
+  title: string | null;
+  artists: ApiArtist[];
+}
+
+interface ApiAnimeTheme {
+  type: string;
+  sequence: number | null;
+  song: ApiSong | null;
+  animethemeentries: ApiThemeEntry[];
+}
+
+interface ApiAnime {
+  id: number;
+  name: string;
+  year: number | null;
+  season: string | null;
+  animethemes: ApiAnimeTheme[];
+}
+
+interface ApiResponse {
+  anime: ApiAnime[];
+  links: {
+    next: string | null;
+  };
+}
+
+export async function fetchAllAnimeWithOpenings(): Promise<TransformedAnime[]> {
+  const result: TransformedAnime[] = [];
+  let page = 1;
+  let hasMore = true;
+
+  while (hasMore) {
+    const res = await fetch(
+      `https://api.animethemes.moe/anime?include=animethemes.animethemeentries.videos,animethemes.song.artists&page[size]=50&page[number]=${page}`,
+      { next: { revalidate: 86400 } },
+    );
+
+    if (!res.ok) break;
+
+    const data: ApiResponse = await res.json();
+
+    for (const anime of data.anime ?? []) {
+      const openings: TransformedOpening[] = (anime.animethemes ?? [])
+        .filter((theme) => theme.type === "OP")
+        .map((theme) => ({
+          type: theme.type,
+          sequence: theme.sequence,
+          song: theme.song?.title ?? null,
+          artists: theme.song?.artists.map((a) => a.name) ?? [],
+          videos: theme.animethemeentries.flatMap((entry) =>
+            entry.videos.map((video) => ({
+              resolution: video.resolution,
+              source: video.source,
+              link: video.link,
+              tags: video.tags,
+            })),
+          ),
+        }));
+
+      if (openings.length > 0) {
+        result.push({
+          id: anime.id,
+          name: anime.name,
+          year: anime.year,
+          season: anime.season,
+          openings,
+        });
+      }
+    }
+
+    hasMore = data.links.next !== null;
+    page++;
+  }
+
+  return result;
+}
