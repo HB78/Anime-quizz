@@ -8,5 +8,5 @@ export default function NavigationWrapper() {
 
   if (pathname === "/") return null;
 
-  return <Navigation />;
+  return <Navigation pathname={pathname} />;
 }

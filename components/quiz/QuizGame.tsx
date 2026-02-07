@@ -44,7 +44,12 @@ export function QuizGame({
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-900 to-blue-900 px-6">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-blue-950 px-6">
+      {/* Background glows */}
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-blue-500/8 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 top-2/3 h-96 w-96 rounded-full bg-purple-500/8 blur-3xl" />
+      <div className="pointer-events-none absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
+
       {/* Audio Player caché */}
       {game.currentQuestion && (
         <div className="hidden">
@@ -60,10 +65,11 @@ export function QuizGame({
         </div>
       )}
 
-      <div className="w-full max-w-2xl">
+      <div className="relative w-full max-w-2xl">
         <QuizHeader
           currentIndex={game.currentIndex}
           totalQuestions={game.totalQuestions}
+          type={type}
         />
 
         {game.phase === "ready" && (

@@ -721,4 +721,13 @@ export const movies = [
     genre: "Action",
     youtubeId: "BboMpayJomw",
   },
+  {
+    id: 102,
+    name: "Man of Steel",
+    query:
+      "Man of Steel Soundtrack | Ignition - Hans Zimmer | WaterTower Music",
+    year: 2013,
+    genre: "Action",
+    youtubeId: "I1vQ3K-rV1g",
+  },
 ];
