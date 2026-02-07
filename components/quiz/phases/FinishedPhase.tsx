@@ -18,10 +18,17 @@ export function FinishedPhase({
 }: FinishedPhaseProps) {
   return (
     <div className="flex flex-col items-center">
-      {/* Trophy icon with golden glow */}
-      <div className="relative mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-yellow-500/30 bg-yellow-500/10">
-        <div className="absolute inset-0 rounded-full bg-yellow-500/20 blur-xl" />
-        <Trophy className="relative h-12 w-12 text-yellow-400" />
+      {/* Video circle with golden glow */}
+      <div className="relative mb-6 h-32 w-32 overflow-hidden rounded-full border-2 border-yellow-500/30">
+        <div className="absolute -inset-4 rounded-full bg-yellow-500/20 blur-xl" />
+        <video
+          className="relative h-full w-full object-cover"
+          src="/videos/misterpopo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
 
       {/* Card */}

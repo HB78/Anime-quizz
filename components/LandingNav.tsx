@@ -3,8 +3,11 @@ import Link from "next/link";
 
 export default function LandingNav() {
   return (
-    <nav className="fixed top-4 left-1/2 z-50 -translate-x-1/2" aria-label="Navigation principale">
-      <div className="flex items-center gap-6 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl">
+    <nav
+      className="fixed top-4 left-1/2 z-50 -translate-x-1/2"
+      aria-label="Navigation principale"
+    >
+      <div className="flex flex-col gap-12 items-center gap-6 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl min-md:flex-row">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo.png"
@@ -21,13 +24,13 @@ export default function LandingNav() {
             href="/quiz"
             className="rounded-lg px-4 py-2 text-sm font-semibold text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
           >
-            Quiz
+            Otaku
           </Link>
           <Link
             href="/chill"
             className="rounded-lg px-4 py-2 text-sm font-semibold text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
           >
-            Chill
+            Blindtest
           </Link>
           <Link
             href="/training"

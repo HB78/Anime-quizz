@@ -13,8 +13,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/quiz", label: "Quiz", icon: Gamepad2 },
-  { href: "/chill", label: "Chill", icon: Coffee },
+  { href: "/quiz", label: "Otaku", icon: Gamepad2 },
+  { href: "/chill", label: "Blindtest", icon: Coffee },
   { href: "/training", label: "Training", icon: Target },
 ];
 

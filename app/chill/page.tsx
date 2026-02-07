@@ -228,7 +228,7 @@ export default function ChillPage() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col px-6 py-12 sm:px-10 lg:py-16">
         {/* Header */}
         <header className="mb-16 flex flex-col items-center justify-center text-center">
-          <h1 className="mt-12 text-6xl font-black tracking-tighter md:text-8xl">
+          <h1 className="mt-15 text-6xl font-black tracking-tighter md:text-8xl">
             <span className="opacity-70">CHILL</span>{" "}
             <span
               className={`bg-gradient-to-r ${selected.gradient} bg-clip-text text-transparent`}

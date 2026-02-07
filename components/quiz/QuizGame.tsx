@@ -65,7 +65,7 @@ export function QuizGame({
         </div>
       )}
 
-      <div className="relative w-full max-w-2xl">
+      <div className="relative w-full max-w-2xl mt-12 transition-all">
         <QuizHeader
           currentIndex={game.currentIndex}
           totalQuestions={game.totalQuestions}
