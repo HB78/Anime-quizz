@@ -7,7 +7,7 @@ export default function LandingNav() {
       className="fixed top-4 left-1/2 z-50 -translate-x-1/2"
       aria-label="Navigation principale"
     >
-      <div className="flex flex-col gap-12 items-center gap-6 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl min-md:flex-row">
+      <div className="flex flex-col gap-6 items-center min-md:gap-12 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl min-md:flex-row">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo.png"
