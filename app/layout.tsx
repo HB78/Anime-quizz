@@ -1,7 +1,13 @@
 import NavigationWrapper from "@/components/NavigationWrapper";
 import Providers from "@/provider/Providers";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Dela_Gothic_One,
+  Geist,
+  Geist_Mono,
+  Noto_Sans_JP,
+  Space_Mono,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +18,24 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const delaGothic = Dela_Gothic_One({
+  variable: "--font-dela-gothic",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,6 +57,9 @@ export const metadata: Metadata = {
     "musique anime",
     "quiz musical",
     "blindtest anime",
+    "anime music quiz",
+    "quiz opening anime",
+    "quiz ending anime",
   ],
   formatDetection: {
     email: false,
@@ -82,7 +109,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${delaGothic.variable} ${notoSansJP.variable} ${spaceMono.variable} antialiased`}
       >
         <Providers>
           <NavigationWrapper />

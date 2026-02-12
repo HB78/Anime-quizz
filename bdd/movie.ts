@@ -494,14 +494,6 @@ export const movies = [
     youtubeId: "3jxgL_wZiFo",
   },
   {
-    id: 72,
-    name: "Austin Powers",
-    query: "austin powers soul bossa nova",
-    year: 1997,
-    genre: "Comedy",
-    youtubeId: "SaCiaQR8x4c",
-  },
-  {
     id: 73,
     name: "Ferris Bueller's Day Off",
     query: "ferris bueller oh yeah yello",
@@ -556,14 +548,6 @@ export const movies = [
     year: 2007,
     genre: "Comedy",
     youtubeId: "-jEpt1Ytm-g",
-  },
-  {
-    id: 80,
-    name: "The Hangover",
-    query: "hangover three best friends zach galifianakis",
-    year: 2009,
-    genre: "Comedy",
-    youtubeId: "xsGP35Vd6qQ",
   },
 
   // === DRAME ===

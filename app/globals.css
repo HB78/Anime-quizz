@@ -11,17 +11,60 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-countdown-scale: countdown-scale 1s ease-in-out infinite;
+  --animate-viz-bar: viz-bar 0.8s ease-in-out infinite alternate;
+  --animate-marquee: marquee-scroll 35s linear infinite;
+  --animate-card-reveal: card-reveal 0.6s both;
+  --animate-fade-up: fade-slide-up 0.8s both;
+  --animate-scroll-pulse: scroll-pulse 2s ease-in-out infinite;
 }
 
+/* ===== Keyframes ===== */
+
 @keyframes countdown-scale {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.12);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
 }
+
+@keyframes viz-bar {
+  0%   { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitch1 {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-3px, 1px); }
+  94% { transform: translate(3px, -1px); }
+  96% { transform: translate(-2px, 2px); }
+}
+
+@keyframes glitch2 {
+  0%, 88%, 100% { transform: translate(0); }
+  90% { transform: translate(3px, -2px); }
+  93% { transform: translate(-3px, 1px); }
+  96% { transform: translate(2px, -1px); }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50%      { opacity: 1;   transform: scaleY(1); }
+}
+
+/* ===== Color scheme ===== */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,141 +79,79 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== Landing Page - Scroll Animation ===== */
+/* ===== Landing — Custom utilities (wrapped in @utility so Tailwind v4 keeps them) ===== */
 
-.landing-section {
-  position: relative;
-  width: 100%;
-  height: 100svh;
-  background-color: #0a0a0a;
-  color: #fff;
-  overflow: hidden;
+@utility font-display {
+  font-family: var(--font-dela-gothic), cursive;
 }
 
-.landing-intro,
-.landing-outro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@utility font-body {
+  font-family: var(--font-noto-sans-jp), sans-serif;
 }
 
-.landing-header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 50%;
-  z-index: 1;
+@utility clip-cyber {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
 }
 
-.landing-header h1 {
-  text-transform: uppercase;
-  font-size: 6rem;
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -0.02rem;
-}
+/* ===== Landing — Glitch text layers (in @layer base so they survive purge) ===== */
 
-.spotlight {
-  background-color: #101010;
-}
-
-.spotlight-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translateY(5%);
-  will-change: transform;
-}
-
-.spotlight-row {
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  gap: 2rem;
-}
-
-.spotlight-img {
-  flex: 1;
-  aspect-ratio: 5/7;
-  overflow: hidden;
-}
-
-.spotlight-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-  filter: saturate(0);
-}
-
-.mask-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100svh;
-  -webkit-mask: url(/images/spotlight-mask.svg) center/contain no-repeat;
-  mask: url(/images/spotlight-mask.svg) center/contain no-repeat;
-  overflow: hidden;
-  -webkit-mask-size: 0%;
-  mask-size: 0%;
-  z-index: 10;
-}
-
-.mask-container .mask-img {
-  width: 100%;
-  height: 100%;
-}
-
-.mask-container .mask-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Custom scrollbar - thin & dark */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #3f3f46;
-  border-radius: 9999px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
-}
-
-/* Firefox */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #3f3f46 transparent;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-  .landing-header h1 {
-    font-size: 3rem;
+@layer base {
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
   }
 
-  .landing-header {
-    width: calc(100% - 4rem);
+  .glitch-text::before {
+    color: #00f0ff;
+    animation: glitch1 3s infinite;
+    clip-path: inset(0 0 65% 0);
   }
 
-  .spotlight-images {
-    width: 200%;
-    left: -25%;
+  .glitch-text::after {
+    color: #ff00aa;
+    animation: glitch2 3s infinite;
+    clip-path: inset(65% 0 0 0);
+  }
+}
+
+/* ===== Custom scrollbar (used across pages) ===== */
+
+@layer base {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 9999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+
+  /* Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46 transparent;
+  }
+}
+
+/* ===== Reduced motion — désactive les animations pour les utilisateurs qui le demandent ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

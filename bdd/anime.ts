@@ -488,7 +488,8 @@ export const animeShows = [
   {
     id: 63,
     name: "Yu-Gi-Oh",
-    query: "Yu-Gi-Oh! Japanese Opening Theme Season 3, Version 1 - WARRIORS by Yuichi Ikusawa",
+    query:
+      "Yu-Gi-Oh! Japanese Opening Theme Season 3, Version 1 - WARRIORS by Yuichi Ikusawa",
     year: 2000,
     genre: "Adventure",
     youtubeId: "Q164I3YXc7s",
@@ -716,14 +717,6 @@ export const animeShows = [
 
   // === DIVERS ===
   {
-    id: 91,
-    name: "Food Wars",
-    query: "food wars opening kibou no uta",
-    year: 2015,
-    genre: "Comedy",
-    youtubeId: "UBoxdhK4AnU",
-  },
-  {
     id: 92,
     name: "Dr. Stone",
     query: "dr stone opening good morning world",
@@ -944,7 +937,7 @@ export const animeShows = [
   {
     id: 119,
     name: "Captain Tsubasa",
-    query: "1983 Captain Tsubasa Opening 2 \"Moete Hero\"",
+    query: '1983 Captain Tsubasa Opening 2 "Moete Hero"',
     year: 1983,
     genre: "Sports",
     youtubeId: "xs3zO6RtvRg",
@@ -952,7 +945,8 @@ export const animeShows = [
   {
     id: 120,
     name: "Hokuto no Ken",
-    query: "Fist of the North Star - Opening 1 v1 【Ai wo Torimodose!!】 4K / UHD Creditless | CC",
+    query:
+      "Fist of the North Star - Opening 1 v1 【Ai wo Torimodose!!】 4K / UHD Creditless | CC",
     year: 1984,
     genre: "Action",
     youtubeId: "pRFxpHSNxkA",
