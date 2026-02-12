@@ -19,5 +19,5 @@ export { default as ModesSection } from "./ModesSection";
 export { default as StatsSection } from "./StatsSection";
 export { default as HowItWorksSection } from "./HowItWorksSection";
 export { default as FeaturesSection } from "./FeaturesSection";
-export { default as SpotlightBanner } from "./SpotlightBanner";
+export { default as SpotlightSection } from "./SpotlightSection";
 export { default as FooterSection } from "./FooterSection";

@@ -12,7 +12,7 @@ import {
   StatsSection,
   HowItWorksSection,
   FeaturesSection,
-  SpotlightBanner,
+  SpotlightSection,
   FooterSection,
 } from "@/components/landing";
 
@@ -47,7 +47,7 @@ export default function Home() {
         <StatsSection />
         <HowItWorksSection />
         <FeaturesSection />
-        <SpotlightBanner />
+        <SpotlightSection />
         <FooterSection />
       </div>
     </main>
