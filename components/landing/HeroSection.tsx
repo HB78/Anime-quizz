@@ -33,7 +33,9 @@ export default function HeroSection() {
       className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden"
     >
       {/* Fond décoratif — grille cyberpunk + gradient souris */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0"
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px)",
@@ -44,7 +46,8 @@ export default function HeroSection() {
             "radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent)",
         }}
       />
-      <div aria-hidden="true"
+      <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-[-10%] w-[120%] h-[120%] transition-[background] duration-300"
         style={{
           background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0,240,255,0.08) 0%, rgba(255,0,170,0.04) 30%, transparent 60%)`,
@@ -89,7 +92,7 @@ export default function HeroSection() {
           style={{ animationDelay: "0.8s" }}
         >
           <Link
-            href="/quiz"
+            href="/chill"
             className="clip-cyber bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#07060b] transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,240,255,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
           >
             Commencer
