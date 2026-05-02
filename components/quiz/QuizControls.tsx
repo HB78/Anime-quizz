@@ -15,7 +15,7 @@ export function QuizControls({
 }: QuizControlsProps) {
   return (
     <div className="flex items-end justify-center gap-6">
-      <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-col items-center gap-1.5 cursor-pointer">
         <button
           onClick={onTogglePause}
           className={`relative flex h-14 w-14 items-center justify-center rounded-full border text-white shadow-lg transition-all duration-300 hover:scale-110 ${
@@ -39,7 +39,7 @@ export function QuizControls({
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-col items-center gap-1.5 curdsor-pointer">
         <button
           onClick={onSkip}
           className="flex h-14 w-14 items-center justify-center rounded-full border border-purple-500/50 bg-purple-500/20 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-purple-500/30"
@@ -50,7 +50,7 @@ export function QuizControls({
         <span className="text-xs text-zinc-500">Skip</span>
       </div>
 
-      <div className="flex flex-col items-center gap-1.5">
+      <div className="flex flex-col items-center gap-1.5 cursor-pointer">
         <button
           onClick={onReplay}
           className="flex h-14 w-14 items-center justify-center rounded-full border border-blue-500/50 bg-blue-500/20 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-500/30"
