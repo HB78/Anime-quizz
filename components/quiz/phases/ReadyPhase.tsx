@@ -31,7 +31,7 @@ export function ReadyPhase({ questionCount, type, onStart }: ReadyPhaseProps) {
 
         <button
           onClick={onStart}
-          className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30"
+          className="cursor-pointer group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30"
         >
           <Zap className="h-5 w-5" />
           Lancer le Quiz
