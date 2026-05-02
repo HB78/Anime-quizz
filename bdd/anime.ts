@@ -896,4 +896,12 @@ export const animeShows = [
     genre: "Action",
     youtubeId: "JUJP5eAxcIA",
   },
+  {
+    id: 122,
+    name: "Cats Eye",
+    query: "Cat's Eye Anime Intro Opening Theme HD",
+    year: 1986,
+    genre: "Action",
+    youtubeId: "qcqQIt-dF-E",
+  },
 ];
