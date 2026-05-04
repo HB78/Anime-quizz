@@ -61,6 +61,7 @@ export function QuizGame({
             muted={false}
             width="0"
             height="0"
+            onPlay={game.confirmPlaying}
           />
         </div>
       )}

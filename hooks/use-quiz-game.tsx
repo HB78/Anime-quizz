@@ -99,18 +99,28 @@ export function useQuizGame({
     []
   );
 
-  // Démarre une question
+  // Démarre une question — le timer ne part qu'au onPlay de ReactPlayer
   const startQuestion = useCallback(() => {
     clearAllTimers();
     setIsPlaying(false);
     setCountdown(questionDuration);
     setPhase("playing");
 
+    // On lance l'audio mais on attend confirmPlaying() pour démarrer le timer
     setTimeout(() => {
       setIsPlaying(true);
-      startCountdownTimer(questionDuration);
     }, 100);
-  }, [clearAllTimers, questionDuration, startCountdownTimer]);
+  }, [clearAllTimers, questionDuration]);
+
+  // Appelé par ReactPlayer onPlay — démarre vraiment le countdown
+  const confirmPlaying = useCallback(() => {
+    setPhase((prev) => {
+      if (prev === "playing") {
+        startCountdownTimer(questionDuration);
+      }
+      return prev;
+    });
+  }, [questionDuration, startCountdownTimer]);
 
   // Démarre le countdown initial (3, 2, 1...)
   const startCountdownPhase = useCallback(() => {
@@ -213,6 +223,7 @@ export function useQuizGame({
 
     // Actions
     startGame,
+    confirmPlaying,
     togglePause,
     skip,
     replay,
