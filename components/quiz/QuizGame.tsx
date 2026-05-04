@@ -90,6 +90,7 @@ export function QuizGame({
             countdown={game.countdown}
             duration={game.questionDuration}
             isPaused={game.phase === "paused"}
+            isBuffering={game.isBuffering}
             onTogglePause={game.togglePause}
             onSkip={game.skip}
             onReplay={handleReplay}

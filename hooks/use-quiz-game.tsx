@@ -28,6 +28,7 @@ export function useQuizGame({
   const [countdown, setCountdown] = useState(questionDuration);
   const [initialCountdown, setInitialCountdown] = useState(countdownFrom);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isBuffering, setIsBuffering] = useState(false);
   const [revealedQuestion, setRevealedQuestion] = useState<QuizQuestion | null>(
     null
   );
@@ -108,6 +109,7 @@ export function useQuizGame({
 
     // On lance l'audio mais on attend confirmPlaying() pour démarrer le timer
     setTimeout(() => {
+      setIsBuffering(true);
       setIsPlaying(true);
     }, 100);
   }, [clearAllTimers, questionDuration]);
@@ -116,6 +118,7 @@ export function useQuizGame({
   const confirmPlaying = useCallback(() => {
     setPhase((prev) => {
       if (prev === "playing") {
+        setIsBuffering(false);
         startCountdownTimer(questionDuration);
       }
       return prev;
@@ -203,6 +206,7 @@ export function useQuizGame({
   const replay = useCallback(() => {
     clearAllTimers();
     setIsPlaying(false);
+    setIsBuffering(false);
     setCurrentIndex(0);
     setCountdown(questionDuration);
     setPhase("ready");
@@ -218,6 +222,7 @@ export function useQuizGame({
     countdown,
     initialCountdown,
     isPlaying,
+    isBuffering,
     revealedQuestion,
     questionDuration,
 

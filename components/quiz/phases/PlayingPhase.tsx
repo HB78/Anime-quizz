@@ -6,6 +6,7 @@ interface PlayingPhaseProps {
   countdown: number;
   duration: number;
   isPaused: boolean;
+  isBuffering: boolean;
   onTogglePause: () => void;
   onSkip: () => void;
   onReplay: () => void;
@@ -15,6 +16,7 @@ export function PlayingPhase({
   countdown,
   duration,
   isPaused,
+  isBuffering,
   onTogglePause,
   onSkip,
   onReplay,
@@ -59,6 +61,11 @@ export function PlayingPhase({
         <div className="mb-6 flex items-center justify-center gap-2 text-xl text-yellow-400">
           <span className="inline-block h-2 w-2 rounded-full bg-yellow-400" />
           En pause
+        </div>
+      ) : isBuffering ? (
+        <div className="mb-6 flex items-center justify-center gap-2 text-xl text-zinc-500">
+          <span className="inline-block h-2 w-2 animate-ping rounded-full bg-zinc-500" />
+          Synchronisation...
         </div>
       ) : (
         <div className="mb-6 flex items-center justify-center gap-2 text-xl text-zinc-400">
