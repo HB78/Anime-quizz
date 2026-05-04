@@ -134,10 +134,11 @@ export const animeShows = [
   {
     id: 18,
     name: "Vinland Saga",
-    query: "vinland saga opening mukanjyo",
+    query:
+      "STILL BLADE - Vinland Saga OST (ヴィンランド・サガ ) Epic Battle Orchestral Cover",
     year: 2019,
     genre: "Action",
-    youtubeId: "l5wAdQ-UkWY",
+    youtubeId: "MY8mMvHfUTE",
   },
   {
     id: 19,
@@ -184,10 +185,10 @@ export const animeShows = [
   {
     id: 26,
     name: "Fruits Basket",
-    query: "fruits basket opening again",
+    query: "Fruits Basket Season 2 Ending 2 - 『Eden』- TV size",
     year: 2019,
     genre: "Romance",
-    youtubeId: "CzhI2NjuLyM",
+    youtubeId: "TKBlq6ox7Ys",
   },
   {
     id: 27,
@@ -332,18 +333,20 @@ export const animeShows = [
   {
     id: 45,
     name: "Yuri on Ice",
-    query: "yuri on ice opening history maker",
+    query:
+      "YURI!!! on ICE Ending Full『Wataru Hatano - You Only Live Once』【ENG Sub】",
     year: 2016,
     genre: "Sports",
-    youtubeId: "5u3RGhznctE",
+    youtubeId: "FjFGBrPIJsk",
   },
   {
     id: 46,
     name: "Hajime no Ippo",
-    query: "hajime no ippo opening inner light",
+    query:
+      'Hajime no Ippo: The Fighting - Opening 1 | "under star" by Shocking Lemon',
     year: 2000,
     genre: "Sports",
-    youtubeId: "dmdOSIzsq3Q",
+    youtubeId: "-LD0SUdJfeU",
   },
   {
     id: 47,
@@ -578,10 +581,10 @@ export const animeShows = [
   {
     id: 78,
     name: "Mashle",
-    query: "mashle opening bling bang bang born",
+    query: "MASHLE: MAGIC AND MUSCLES The Divine Visionary Candidate Exam Arc",
     year: 2023,
     genre: "Comedy",
-    youtubeId: "210R0ozmLwg",
+    youtubeId: "FvCV9KXNKLY",
   },
   {
     id: 79,
@@ -702,10 +705,10 @@ export const animeShows = [
   {
     id: 95,
     name: "Black Clover",
-    query: "black clover opening haruka mirai",
+    query: "Black Clover OST - 05 -『Pentagram』",
     year: 2017,
     genre: "Action",
-    youtubeId: "_6KZI74zKfE",
+    youtubeId: "IWh5yfdHGOw",
   },
   {
     id: 96,
@@ -727,10 +730,10 @@ export const animeShows = [
     id: 98,
     name: "Made in Abyss",
     query:
-      "Made in Abyss OST - Pathway (Goodbye My Friend) [メイドインアビス OST]",
+      "Hanezeve Caradhina (ft.Takeshi Saito) | Made in Abyss OST [ Lyrics ]",
     year: 2017,
     genre: "Adventure",
-    youtubeId: "nk8COybCLuU",
+    youtubeId: "sFzDQ2OjFko",
   },
   {
     id: 99,
@@ -767,10 +770,10 @@ export const animeShows = [
   {
     id: 104,
     name: "Serial Experiments Lain",
-    query: "serial experiments lain opening duvet",
+    query: "Serial Experiments Lain Soundtrack: 06 Working Man's Theme",
     year: 1998,
     genre: "Sci-Fi",
-    youtubeId: "Uoox9fpmDP0",
+    youtubeId: "nTNI8DGAKlI",
   },
   {
     id: 105,
@@ -817,18 +820,18 @@ export const animeShows = [
   {
     id: 112,
     name: "Kengan Ashura",
-    query: "kengan ashura opening king and ashura",
+    query: "Kengan Ashura Soundtrack - The Animal Fighter",
     year: 2019,
     genre: "Action",
-    youtubeId: "OxNeZiOr_zs",
+    youtubeId: "7-UvccSXnwc",
   },
   {
     id: 113,
     name: "Kakegurui",
-    query: "kakegurui opening deal with the devil",
+    query: "Kakegurui OST - High Strung",
     year: 2017,
     genre: "Thriller",
-    youtubeId: "pJ-MywdW98o",
+    youtubeId: "o4DuWZk9lKo",
   },
   {
     id: 114,
@@ -903,5 +906,69 @@ export const animeShows = [
     year: 1986,
     genre: "Action",
     youtubeId: "qcqQIt-dF-E",
+  },
+  {
+    id: 123,
+    name: "Dandadan",
+    query: "DAN DA DAN - Opening | Otonoke de Creepy Nuts",
+    year: 1986,
+    genre: "Action",
+    youtubeId: "qPdPjWkJZF8",
+  },
+  {
+    id: 124,
+    name: "Black Lagoon",
+    query: "black lagoon opening red fraction",
+    year: 2006,
+    genre: "Action",
+    youtubeId: "dWfxcRj39tg",
+  },
+  {
+    id: 125,
+    name: "Claymore",
+    query: "claymore opening ration blue",
+    year: 2007,
+    genre: "Dark Fantasy",
+    youtubeId: "dbj9Yjskco0",
+  },
+  {
+    id: 126,
+    name: "Ergo Proxy",
+    query: "ergo proxy opening kyshiki",
+    year: 2006,
+    genre: "Sci-Fi",
+    youtubeId: "oAXrRWLKzko",
+  },
+  {
+    id: 127,
+    name: "Texhnolyze",
+    query: "texhnolyze opening guardian angel",
+    year: 2003,
+    genre: "Sci-Fi",
+    youtubeId: "u3SzOzm8lmo",
+  },
+  {
+    id: 128,
+    name: "Erased",
+    query: "erased opening re re",
+    year: 2016,
+    genre: "Thriller",
+    youtubeId: "fodAJ-1dN3I",
+  },
+  {
+    id: 129,
+    name: "Tokyo Revengers",
+    query: "tokyo revengers opening cry baby",
+    year: 2021,
+    genre: "Action",
+    youtubeId: "O1bhZgkC4Gw",
+  },
+  {
+    id: 161,
+    name: "Gantz",
+    query: "gantz opening super shooter",
+    year: 2004,
+    genre: "Horror",
+    youtubeId: "SJ5ICtGn6u8",
   },
 ];
