@@ -39,18 +39,33 @@ export function PlayingPhase({
     <div
       className={`text-center transition-opacity duration-500 ${isPaused ? "opacity-60" : "opacity-100"}`}
     >
-      {/* Timer circle */}
+      {/* Timer SVG */}
       <div className="relative mx-auto mb-6 flex h-36 w-36 items-center justify-center">
-        <div className="absolute inset-0 rounded-full border-2 border-zinc-700" />
-        <div
-          className={`absolute inset-0 rounded-full border-2 transition-colors duration-1000 ${
-            ratio > 0.5
-              ? "border-green-500/30"
-              : ratio > 0.25
-                ? "border-yellow-500/30"
-                : "border-red-500/30"
-          }`}
-        />
+        <svg
+          width="144"
+          height="144"
+          className="absolute inset-0 -rotate-90"
+          aria-hidden="true"
+        >
+          {/* Piste de fond */}
+          <circle
+            cx="72" cy="72" r="66"
+            fill="none"
+            stroke="#27272a"
+            strokeWidth="4"
+          />
+          {/* Arc progressif */}
+          <circle
+            cx="72" cy="72" r="66"
+            fill="none"
+            stroke={ratio > 0.5 ? "#22c55e" : ratio > 0.25 ? "#eab308" : "#ef4444"}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray={2 * Math.PI * 66}
+            strokeDashoffset={(1 - ratio) * 2 * Math.PI * 66}
+            style={{ transition: "stroke-dashoffset 1s linear, stroke 700ms" }}
+          />
+        </svg>
         <span className="relative text-7xl font-bold text-white">
           {countdown}
         </span>
