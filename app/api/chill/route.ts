@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
     year: item.year,
     genre: item.genre,
     type: getItemType(item),
-    imageUrl: `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`,
+    imageUrl: `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`,
     youtubeUrl: `https://www.youtube.com/watch?v=${item.youtubeId}`,
   }));
 
