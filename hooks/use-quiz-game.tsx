@@ -171,6 +171,7 @@ export function useQuizGame({
     startCountdownPhase,
   ]);
 
+
   // Garder la ref à jour
   useEffect(() => {
     handleQuestionEndRef.current = handleQuestionEnd;
