@@ -191,14 +191,6 @@ export const animeShows = [
     youtubeId: "7DpONAPM3Zw",
   },
   {
-    id: 29,
-    name: "Oregairu",
-    query: "oregairu opening yukitoki",
-    year: 2013,
-    genre: "Romance",
-    youtubeId: "Q1W6oINBrnE",
-  },
-  {
     id: 30,
     name: "Violet Evergarden",
     query: "violet evergarden opening sincerely",
@@ -376,8 +368,8 @@ export const animeShows = [
   },
   {
     id: 55,
-    name: "Gundam",
-    query: "gundam opening",
+    name: "Gundam Wing",
+    query: "gundam wing opening",
     year: 1979,
     genre: "Mecha",
     youtubeId: "oNJ4aBoRipg",
@@ -634,7 +626,7 @@ export const animeShows = [
     query: "shiki opening kuchizuke",
     year: 2010,
     genre: "Horror",
-    youtubeId: "Dqtm2DrcKWg",
+    youtubeId: "iKNnJS9lpFA",
   },
   {
     id: 89,
@@ -729,7 +721,7 @@ export const animeShows = [
   },
   {
     id: 101,
-    name: "Mobile Suit Gundam 00",
+    name: "Gundam 00",
     query: "gundam 00 Fight ost",
     year: 2007,
     genre: "Mecha",
@@ -1036,11 +1028,20 @@ export const animeShows = [
     youtubeId: "WazT_uV9L2o",
   },
   {
-    id: 282,
+    id: 142,
     name: "Jormungand",
     query: "jormungand opening borderline",
     year: 2012,
     genre: "Action",
     youtubeId: "uDhEtUl7U-A",
+  },
+  {
+    id: 143,
+    name: "Dragon Ball GT",
+    query:
+      "Dragon Ball GT - Ending 2 (Don't you see!) | 4K UHD Creditless | Subtitles",
+    year: 2003,
+    genre: "Action",
+    youtubeId: "SYfid5jok1M",
   },
 ];
