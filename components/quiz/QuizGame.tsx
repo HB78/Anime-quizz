@@ -26,7 +26,7 @@ export function QuizGame({
   onReplay,
   onReset,
   menuHref,
-  questionDuration = 20,
+  questionDuration = 25,
 }: QuizGameProps) {
   const game = useQuizGame({
     questions,
