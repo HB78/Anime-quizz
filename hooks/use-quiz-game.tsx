@@ -30,7 +30,7 @@ export function useQuizGame({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isBuffering, setIsBuffering] = useState(false);
   const [revealedQuestion, setRevealedQuestion] = useState<QuizQuestion | null>(
-    null
+    null,
   );
 
   // Refs pour accéder aux valeurs courantes dans les closures des timers
@@ -75,30 +75,27 @@ export function useQuizGame({
   const handleQuestionEndRef = useRef<() => void>(() => {});
 
   // Démarre le timer de question
-  const startCountdownTimer = useCallback(
-    (startValue: number) => {
-      if (countdownIntervalRef.current) {
-        clearInterval(countdownIntervalRef.current);
-        countdownIntervalRef.current = null;
-      }
+  const startCountdownTimer = useCallback((startValue: number) => {
+    if (countdownIntervalRef.current) {
+      clearInterval(countdownIntervalRef.current);
+      countdownIntervalRef.current = null;
+    }
 
-      countdownIntervalRef.current = setInterval(() => {
-        setCountdown((prev) => {
-          if (prev <= 1) {
-            if (countdownIntervalRef.current) {
-              clearInterval(countdownIntervalRef.current);
-              countdownIntervalRef.current = null;
-            }
-            // Appel via ref pour toujours avoir la version à jour
-            setTimeout(() => handleQuestionEndRef.current(), 0);
-            return 0;
+    countdownIntervalRef.current = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          if (countdownIntervalRef.current) {
+            clearInterval(countdownIntervalRef.current);
+            countdownIntervalRef.current = null;
           }
-          return prev - 1;
-        });
-      }, 1000);
-    },
-    []
-  );
+          // Appel via ref pour toujours avoir la version à jour
+          setTimeout(() => handleQuestionEndRef.current(), 0);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, []);
 
   // Démarre une question — le timer ne part qu'au onPlay de ReactPlayer
   const startQuestion = useCallback(() => {
@@ -165,12 +162,7 @@ export function useQuizGame({
         setPhase("finished");
       }
     }, revealDuration);
-  }, [
-    clearAllTimers,
-    revealDuration,
-    startCountdownPhase,
-  ]);
-
+  }, [clearAllTimers, revealDuration, startCountdownPhase]);
 
   // Garder la ref à jour
   useEffect(() => {
@@ -184,7 +176,7 @@ export function useQuizGame({
   }, [startCountdownPhase]);
 
   const togglePause = useCallback(() => {
-    if (phase === "playing") {
+    if (phase === "playing" && !isBuffering) {
       setPhase("paused");
       setIsPlaying(false);
       if (countdownIntervalRef.current) {
@@ -196,7 +188,7 @@ export function useQuizGame({
       setIsPlaying(true);
       startCountdownTimer(countdown);
     }
-  }, [phase, countdown, startCountdownTimer]);
+  }, [phase, countdown, isBuffering, startCountdownTimer]);
 
   const skip = useCallback(() => {
     clearAllTimers();
