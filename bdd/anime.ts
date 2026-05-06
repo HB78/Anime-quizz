@@ -108,14 +108,6 @@ export const animeShows = [
     youtubeId: "vxLbI80RdYs",
   },
   {
-    id: 14,
-    name: "Steins;Gate",
-    query: "steins gate opening hacking to the gate",
-    year: 2011,
-    genre: "Sci-Fi",
-    youtubeId: "dy7gr0vaNho",
-  },
-  {
     id: 15,
     name: "Psycho-Pass",
     query: "Psycho-Pass OST : PSYCHO-PASS",
