@@ -48,7 +48,16 @@ export async function GET(req: NextRequest) {
   const withYoutube = dataSource.filter((item) => item.youtubeId);
 
   // Shuffle
-  const shuffled = withYoutube.sort(() => 0.5 - Math.random());
+  function shuffle<T>(arr: T[]): T[] {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  const shuffled = shuffle(withYoutube);
 
   const themes = shuffled.map((item) => ({
     id: `${getItemType(item)}-${item.id}`,
@@ -57,7 +66,7 @@ export async function GET(req: NextRequest) {
     genre: item.genre,
     type: getItemType(item),
     imageUrl: `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`,
-    youtubeUrl: `https://www.youtube.com/watch?v=${item.youtubeId}`,
+    youtubeUrl: `https://www.youtube-nocookie.com/watch?v=${item.youtubeId}`,
   }));
 
   return NextResponse.json({
@@ -65,3 +74,5 @@ export async function GET(req: NextRequest) {
     themes,
   });
 }
+//ancien lien youtube : `https://www.youtube.com/watch?v=${item.youtubeId}`,
+// youtubeUrl: `https://www.youtube.com/watch?v=${item.youtubeId}`,

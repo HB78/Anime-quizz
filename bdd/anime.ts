@@ -23,15 +23,15 @@ export const animeShows = [
     query: "Bakugo VS All For One",
     year: 2016,
     genre: "Action",
-    youtubeId: "hS-6rFdT1JU",
+    youtubeId: "JulZjmLfLw4",
   },
   {
     id: 4,
     name: "One Piece",
-    query: "One Piece OST - Mother Sea",
+    query: "One Piece OST - Justice",
     year: 1999,
     genre: "Adventure",
-    youtubeId: "o231fOo8cNg",
+    youtubeId: "vBhbmwpfWk0",
   },
   {
     id: 5,
@@ -44,18 +44,18 @@ export const animeShows = [
   {
     id: 6,
     name: "Bleach",
-    query: "Treachery - Sosuke Aizen's Theme",
+    query: "Nightcore - Bleach OST - Stand up, be Strong",
     year: 2004,
     genre: "Action",
-    youtubeId: "bWAVOlfUpx4",
+    youtubeId: "Cp0mAzF-UKc",
   },
   {
     id: 7,
     name: "Dragon Ball Z",
-    query: "Vegeta's sacrifice - Dragon Ball Z OST",
+    query: "Dragon Ball Z - BP∞ Battle Point Unlimited",
     year: 1989,
     genre: "Action",
-    youtubeId: "VPMPCEHwFS8",
+    youtubeId: "eMYt9sGOcTU",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const animeShows = [
     query: "Ansatsu Ikka no Yakata",
     year: 2011,
     genre: "Adventure",
-    youtubeId: "gdNcfEGcwr0",
+    youtubeId: "riufO6yAgHo",
   },
   {
     id: 10,
@@ -79,25 +79,25 @@ export const animeShows = [
     query: "Jujutsu Kaisen OST - Yuuji's Rage (One’s Innermost Thoughts)",
     year: 2020,
     genre: "Action",
-    youtubeId: "y3PB03SvEcs",
+    youtubeId: "bkpX2kfHprc",
   },
 
   // === SEINEN ===
   {
     id: 11,
     name: "Death Note",
-    query: "Death Note - (N's Theme A) Music",
+    query: 'Death Note OST I - "Taikutsu",',
     year: 2006,
     genre: "Thriller",
-    youtubeId: "WJW_ldC7sUA",
+    youtubeId: "hWX9Bvm-Cd4",
   },
   {
     id: 12,
     name: "Tokyo Ghoul",
-    query: "Tokyo Ghoul - Aogiri theme",
+    query: "Tokyo Ghoul - Ending | Saints",
     year: 2014,
     genre: "Horror",
-    youtubeId: "B4ibOrDx_gg",
+    youtubeId: "kSkSvK6Zx_I",
   },
   {
     id: 13,
@@ -110,18 +110,18 @@ export const animeShows = [
   {
     id: 15,
     name: "Psycho-Pass",
-    query: "Psycho-Pass OST : PSYCHO-PASS",
+    query: "「PSYCHO-PASS サイコパス」2クール目OPテーマ",
     year: 2012,
     genre: "Sci-Fi",
-    youtubeId: "PRGV4FEQFf4",
+    youtubeId: "SJ-aUXmJM8Q",
   },
   {
     id: 16,
     name: "Monster",
-    query: "monster opening grain",
+    query: "Monster OST - Drift",
     year: 2004,
     genre: "Thriller",
-    youtubeId: "s6xRWH10KI0",
+    youtubeId: "I0usR-H9y7A",
   },
   {
     id: 18,
@@ -195,10 +195,10 @@ export const animeShows = [
   {
     id: 31,
     name: "Sword Art Online",
-    query: "sword art online At Nightfall",
+    query: "Gleam Eyes OST (sword art online) We have to defeat it.",
     year: 2012,
     genre: "Isekai",
-    youtubeId: "zWDrH1jJ3gE",
+    youtubeId: "1h994kmCrpI",
   },
   {
     id: 32,
@@ -254,7 +254,7 @@ export const animeShows = [
     query: "Anime de Japan - All Of You Is All Of Me Theme (No Game No Life)",
     year: 2014,
     genre: "Isekai",
-    youtubeId: "05Kx8us0xx0",
+    youtubeId: "hoEVwicbZTk",
   },
   {
     id: 39,
@@ -310,11 +310,10 @@ export const animeShows = [
   {
     id: 46,
     name: "Hajime no Ippo",
-    query:
-      'Hajime no Ippo: The Fighting - Opening 1 | "under star" by Shocking Lemon',
+    query: "Hajime No Ippo - Ending 1 - Yuuzora No Kami Hikouki",
     year: 2000,
     genre: "Sports",
-    youtubeId: "-LD0SUdJfeU",
+    youtubeId: "hLMTfIZiIGA",
   },
   {
     id: 47,
@@ -475,10 +474,11 @@ export const animeShows = [
   {
     id: 70,
     name: "Ghost in the Shell",
-    query: "ghost in the shell opening inner universe",
+    query:
+      "Rise - Origa (Ghost in the Shell: Stand Alone Complex 2nd GIG OP FULL) HQ",
     year: 2002,
     genre: "Sci-Fi",
-    youtubeId: "dP4t_GGl3Es",
+    youtubeId: "sJqe5clCBTI",
   },
 
   // === RÉCENTS / POPULAIRES ===
@@ -491,20 +491,12 @@ export const animeShows = [
     youtubeId: "dFlDRhvM4L0",
   },
   {
-    id: 72,
-    name: "Spy x Family",
-    query: "spy family opening mixed nuts",
-    year: 2022,
-    genre: "Comedy",
-    youtubeId: "U_rWZK_8vUY",
-  },
-  {
     id: 73,
     name: "Cyberpunk Edgerunners",
-    query: "cyberpunk edgerunners opening this fffire",
+    query: "Cyberpunk: Edgerunners - Ending 【Let You Down】 4K / UHD | CC",
     year: 2022,
     genre: "Sci-Fi",
-    youtubeId: "mH2wmyeiIpA",
+    youtubeId: "jzmHj-u5JxQ",
   },
   {
     id: 74,
@@ -818,14 +810,6 @@ export const animeShows = [
     youtubeId: "dt6XXfcdVY0",
   },
   {
-    id: 117,
-    name: "City Hunter",
-    query: "city hunter footsteps",
-    year: 1987,
-    genre: "Action",
-    youtubeId: "EOW9f_Pdmjk",
-  },
-  {
     id: 118,
     name: "Dragon Ball Super",
     query:
@@ -998,10 +982,10 @@ export const animeShows = [
   {
     id: 139,
     name: "Kaiju No. 8",
-    query: "「Creditless」Kaiju No. 8 OP / Opening 2「UHD 60FPS」",
+    query: "「Creditless」Kaiju No. 8 ED / Ending 2「UHD 60FPS」",
     year: 2024,
     genre: "Action",
-    youtubeId: "G-SvTG5SAbc",
+    youtubeId: "koC2855Cdf8",
   },
   {
     id: 140,
@@ -1086,15 +1070,6 @@ export const animeShows = [
     genre: "Thriller",
     youtubeId: "5emM3JGI5JA",
   },
-
-  {
-    id: 151,
-    name: "one piece Brook",
-    query: "Brook",
-    year: 2007,
-    genre: "Thriller",
-    youtubeId: "4MFcP6t7EYc",
-  },
   {
     id: 152,
     name: "Fairy Tail",
@@ -1113,11 +1088,11 @@ export const animeShows = [
   },
   {
     id: 154,
-    name: "Batman",
-    query: "Batman",
+    name: "MGS4",
+    query: "Metal Gear Solid 4 - Victory Song",
     year: 2007,
     genre: "Thriller",
-    youtubeId: "zp0RrNwq2i8",
+    youtubeId: "1xROQUdmP3U",
   },
   {
     id: 155,
@@ -1134,14 +1109,6 @@ export const animeShows = [
     year: 2007,
     genre: "Thriller",
     youtubeId: "9_5LhZ7pQpM",
-  },
-  {
-    id: 157,
-    name: "SNK",
-    query: "SNK",
-    year: 2007,
-    genre: "Thriller",
-    youtubeId: "9l9Wa-5ph6o",
   },
   {
     id: 158,
@@ -1176,19 +1143,12 @@ export const animeShows = [
     youtubeId: "PcmmU4aEQu0",
   },
   {
-    id: 162,
-    name: "erased op 1",
-    query: "erased op 1",
-    year: 2007,
-    genre: "Thriller",
-    youtubeId: "fodAJ-1dN3I",
-  },
-  {
-    id: 163,
-    name: "Your name",
-    query: "Your name",
-    year: 2007,
-    genre: "Thriller",
-    youtubeId: "lFsg_sDwlak",
+    id: 170,
+    name: "Kingdom",
+    query:
+      "Kingdom  Kingdom Season 4 Ending / ED 9 Full Lyrics Sub Español ( Genyou by Haku )",
+    year: 2012,
+    genre: "Action",
+    youtubeId: "JLlEgc5Ghrs",
   },
 ];
