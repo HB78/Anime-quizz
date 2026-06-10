@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  ChevronRight,
+  ArrowRight,
   Clapperboard,
   Dice5,
   Film,
@@ -10,7 +10,6 @@ import {
   Library,
   Music,
   Tv,
-  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -98,37 +97,32 @@ const stats = [
 
 function ModeCard({
   mode,
-  isActive,
   isHovered,
-  onClick,
   onHover,
 }: {
   mode: ModeConfig;
-  isActive: boolean;
   isHovered: boolean;
-  onClick: () => void;
   onHover: (hovered: boolean) => void;
 }) {
   const Icon = mode.icon;
 
   return (
-    <button
-      onClick={onClick}
+    <Link
+      href={`/chill/play?type=${mode.key}`}
       onMouseEnter={() => onHover(true)}
       onMouseLeave={() => onHover(false)}
-      aria-pressed={isActive}
       style={{
-        boxShadow: isActive ? `0 25px 60px -12px ${mode.shadowColor}` : "none",
+        boxShadow: isHovered ? `0 25px 60px -12px ${mode.shadowColor}` : "none",
       }}
-      className={`group relative flex h-[340px] w-full flex-col items-start justify-between overflow-hidden rounded-3xl border p-8 text-left transition-all duration-700 md:h-[380px] md:p-10 ${
-        isActive
+      className={`group relative flex h-[340px] w-full cursor-pointer flex-col items-start justify-between overflow-hidden rounded-3xl border p-8 text-left transition-all duration-700 md:h-[380px] md:p-10 ${
+        isHovered
           ? "z-20 scale-[1.03] border-white/20"
-          : `z-10 ${mode.borderClass} hover:scale-[1.01]`
+          : `z-10 ${mode.borderClass}`
       }`}
     >
       {/* Dynamic background */}
       <div
-        className={`absolute inset-0 transition-all duration-1000 ${isActive ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 transition-all duration-1000 ${isHovered ? "opacity-100" : "opacity-0"}`}
       >
         <div
           className={`absolute inset-0 bg-gradient-to-br ${mode.gradient} opacity-[0.12]`}
@@ -139,25 +133,36 @@ function ModeCard({
       {/* Glass base */}
       <div
         className={`absolute inset-0 backdrop-blur-sm transition-all duration-700 ${
-          isActive ? "bg-black/20" : "bg-black/60"
+          isHovered ? "bg-black/20" : "bg-black/60"
         }`}
       />
 
-      {/* Icon */}
-      <div className="relative z-10">
+      {/* Icon + Arrow play */}
+      <div className="relative z-10 flex w-full items-start justify-between">
         <div
           className={`relative flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-700 md:h-20 md:w-20 ${
-            isActive
-              ? `bg-gradient-to-br ${mode.gradient} text-white shadow-[0_0_30px_rgba(255,255,255,0.15)]`
+            isHovered
+              ? `bg-gradient-to-br ${mode.gradient} -translate-y-1 scale-110 text-white shadow-[0_0_30px_rgba(255,255,255,0.15)]`
               : `bg-white/5 ${mode.iconColor}`
-          } ${isHovered ? "-translate-y-1 scale-110" : ""}`}
+          }`}
         >
-          {isActive && (
+          {isHovered && (
             <div
               className={`absolute inset-0 animate-pulse rounded-full bg-gradient-to-br ${mode.gradient} opacity-40 blur-2xl`}
             />
           )}
           <Icon size={32} className="relative z-10" />
+        </div>
+
+        {/* Arrow play qui apparaît au hover */}
+        <div
+          className={`flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-white backdrop-blur-sm transition-all duration-500 ${
+            isHovered
+              ? "translate-x-0 opacity-100"
+              : "translate-x-2 opacity-0"
+          }`}
+        >
+          <ArrowRight size={20} strokeWidth={2.5} />
         </div>
       </div>
 
@@ -167,14 +172,14 @@ function ModeCard({
           {/* "Ready" badge */}
           <div
             className={`inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-3 py-1 transition-all duration-700 ${
-              isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              isHovered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
             <span
               className={`h-1.5 w-1.5 animate-pulse rounded-full bg-gradient-to-r ${mode.gradient}`}
             />
             <span className="text-[10px] font-black uppercase tracking-widest text-white/60">
-              Prêt pour le quiz
+              Cliquer pour jouer
             </span>
           </div>
 
@@ -193,20 +198,19 @@ function ModeCard({
         >
           <div
             className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r transition-all duration-1000 ease-out ${mode.gradient} ${
-              isActive ? "w-full" : "w-0"
+              isHovered ? "w-full" : "w-0"
             }`}
           />
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
 export default function ChillPage() {
-  const [mode, setMode] = useState<ChillMode>("anime");
   const [hoveredMode, setHoveredMode] = useState<string | null>(null);
 
-  const selected = modes.find((m) => m.key === mode)!;
+  const hovered = modes.find((m) => m.key === hoveredMode) ?? modes[1];
 
   return (
     <main className="relative min-h-screen bg-[#010101] text-zinc-100">
@@ -216,7 +220,7 @@ export default function ChillPage() {
         aria-hidden="true"
       >
         <div
-          className={`absolute -left-[10%] -top-[20%] h-[70%] w-[70%] rounded-full bg-gradient-to-br ${selected.gradient} opacity-[0.06] blur-[200px] transition-all duration-1000`}
+          className={`absolute -left-[10%] -top-[20%] h-[70%] w-[70%] rounded-full bg-gradient-to-br ${hovered.gradient} opacity-[0.06] blur-[200px] transition-all duration-1000`}
         />
         <div className="absolute -bottom-[15%] -right-[10%] h-[60%] w-[60%] rounded-full bg-white/5 opacity-10 blur-[200px]" />
       </div>
@@ -227,7 +231,7 @@ export default function ChillPage() {
           <h1 className="mt-15 text-6xl font-black tracking-tighter md:text-8xl">
             <span className="opacity-70">CHILL</span>{" "}
             <span
-              className={`bg-gradient-to-r ${selected.gradient} bg-clip-text text-transparent`}
+              className={`bg-gradient-to-r ${hovered.gradient} bg-clip-text text-transparent`}
             >
               ZONE
             </span>
@@ -256,9 +260,7 @@ export default function ChillPage() {
                 <ModeCard
                   key={m.key}
                   mode={m}
-                  isActive={mode === m.key}
                   isHovered={hoveredMode === m.key}
-                  onClick={() => setMode(m.key)}
                   onHover={(h) => setHoveredMode(h ? m.key : null)}
                 />
               ))}
@@ -282,51 +284,12 @@ export default function ChillPage() {
                 <ModeCard
                   key={m.key}
                   mode={m}
-                  isActive={mode === m.key}
                   isHovered={hoveredMode === m.key}
-                  onClick={() => setMode(m.key)}
                   onHover={(h) => setHoveredMode(h ? m.key : null)}
                 />
               ))}
             </div>
           </section>
-
-          {/* Launch button */}
-          <div className="mx-auto mt-12 w-full max-w-5xl">
-            <Link
-              href={`/chill/play?type=${mode}`}
-              className="group relative flex w-full items-center justify-between overflow-hidden rounded-[2rem] border border-white/10 p-8 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)] transition-all duration-700 active:scale-[0.97] md:p-12"
-            >
-              {/* Hover gradient */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-r ${selected.gradient} opacity-0 transition-opacity duration-1000 group-hover:opacity-100`}
-              />
-              {/* Base glass */}
-              <div className="absolute inset-0 bg-zinc-900/80 backdrop-blur-sm transition-opacity duration-1000 group-hover:opacity-0" />
-              {/* Bottom glow */}
-              <div
-                className={`absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr ${selected.gradient} opacity-20 blur-[120px] transition-opacity group-hover:opacity-50`}
-              />
-
-              <div className="relative z-10 flex flex-col items-start text-left">
-                <span className="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.4em] text-zinc-500 transition-colors group-hover:text-white/80">
-                  <Zap size={16} className="group-hover:fill-white" />
-                  Configuration : {selected.label}
-                </span>
-                <span className="text-3xl font-black leading-none tracking-tighter text-white md:text-5xl">
-                  DÉMARRER LA SESSION
-                </span>
-              </div>
-
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white shadow-2xl backdrop-blur-sm transition-all duration-700 group-hover:scale-110 group-hover:bg-white group-hover:text-black md:h-20 md:w-20">
-                <ChevronRight
-                  size={36}
-                  strokeWidth={3}
-                  className="translate-x-0.5"
-                />
-              </div>
-            </Link>
-          </div>
         </div>
 
         {/* Info bar */}

@@ -39,19 +39,11 @@ export function FinishedPhase({
         />
       </div>
 
-      {/* Eyebrow */}
-      <div
-        className="mb-7 font-mono text-[11px] font-semibold uppercase tracking-[0.4em]"
-        style={{ color: ACCENT }}
-      >
-        ✦ Session terminée ✦
-      </div>
-
       {/* Titre */}
       <h1 className="mb-6 text-7xl font-bold leading-[0.9] tracking-tighter text-white md:text-8xl">
-        <span className="block">Bonne</span>
+        <span className="block">Bien</span>
         <span className="block" style={{ color: ACCENT }}>
-          écoute.
+          joué
         </span>
       </h1>
 
