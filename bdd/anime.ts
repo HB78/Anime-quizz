@@ -1151,4 +1151,28 @@ export const animeShows = [
     genre: "Action",
     youtubeId: "JLlEgc5Ghrs",
   },
+  {
+    id: 177,
+    name: "JoJo's Bizarre Adventure",
+    query: "JoJo OST - Il Vento D'Oro",
+    year: 2012,
+    genre: "Action",
+    youtubeId: "FPyIMtXsIcY",
+  },
+  {
+    id: 183,
+    name: "Rainbow",
+    query: "Rainbow Nisha opening 1",
+    year: 2010,
+    genre: "Drama",
+    youtubeId: "eOBz4PTr6kU",
+  },
+  {
+    id: 181,
+    name: "Golden Kamuy",
+    query: "Golden Kamuy Opening",
+    year: 2018,
+    genre: "Adventure",
+    youtubeId: "QahFijEd3hY",
+  },
 ];
