@@ -13,6 +13,12 @@ interface QuizHeaderProps {
   status?: string;
 }
 
+const MODE_LABEL: Record<string, string> = {
+  opening: "Quiz",
+  ending: "Quiz",
+  soundtrack: "Chill",
+};
+
 export function QuizHeader({
   currentIndex,
   totalQuestions,
@@ -21,6 +27,7 @@ export function QuizHeader({
   status,
 }: QuizHeaderProps) {
   const progress = ((currentIndex + 1) / totalQuestions) * 100;
+  const modeLabel = type ? MODE_LABEL[type] ?? "Chill" : "Chill";
 
   return (
     <div className="fixed left-0 right-0 top-0 z-40">
@@ -53,7 +60,7 @@ export function QuizHeader({
               />
               <div className="flex items-baseline gap-2.5">
                 <span className="font-mono text-[11px] font-bold uppercase tracking-[0.4em] text-white">
-                  Chill
+                  {modeLabel}
                 </span>
                 <span className="font-mono text-[9px] text-white/25">━━</span>
                 <span className="font-mono text-[11px] font-bold uppercase tracking-[0.4em] text-white/55">

@@ -82,6 +82,7 @@ export function QuizGame({
             questionCount={game.totalQuestions}
             type={type}
             onStart={game.startGame}
+            menuHref={menuHref}
           />
         )}
 
