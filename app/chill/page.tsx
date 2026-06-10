@@ -178,14 +178,10 @@ function ModeCard({
             </span>
           </div>
 
-          <h3
-            className="text-3xl font-black leading-none tracking-tighter text-white md:text-4xl"
-          >
+          <h3 className="text-3xl font-black leading-none tracking-tighter text-white md:text-4xl">
             {mode.label}
           </h3>
-          <p
-            className="text-sm font-medium leading-relaxed text-zinc-300"
-          >
+          <p className="text-sm font-medium leading-relaxed text-zinc-300">
             {mode.description}
           </p>
         </div>

@@ -7,7 +7,7 @@ export const animeShows = [
     query: "Warhammer Titan Theme - Attack on Titan OST",
     year: 2013,
     genre: "Action",
-    youtubeId: "AZEehl_G7KY",
+    youtubeId: "JFr_quDd5aQ",
   },
   {
     id: 2,
@@ -20,18 +20,18 @@ export const animeShows = [
   {
     id: 3,
     name: "My Hero Academia",
-    query: "Bakugo VS All For One",
+    query: "My Hero Academia UST - Kyoui to no Koubou (No Drums)",
     year: 2016,
     genre: "Action",
-    youtubeId: "JulZjmLfLw4",
+    youtubeId: "MFTlL0xFqp8",
   },
   {
     id: 4,
     name: "One Piece",
-    query: "One Piece OST - Justice",
+    query: "One Piece Soundtrack - Gold And Oden HD",
     year: 1999,
     genre: "Adventure",
-    youtubeId: "vBhbmwpfWk0",
+    youtubeId: "6FscTa_Nqwo",
   },
   {
     id: 5,
@@ -310,10 +310,10 @@ export const animeShows = [
   {
     id: 46,
     name: "Hajime no Ippo",
-    query: "Hajime No Ippo - Ending 1 - Yuuzora No Kami Hikouki",
+    query: "Hajime No Ippo OST 20 - Arayashiki [HD]",
     year: 2000,
     genre: "Sports",
-    youtubeId: "hLMTfIZiIGA",
+    youtubeId: "lX8mthPC5vY",
   },
   {
     id: 47,
@@ -1089,7 +1089,7 @@ export const animeShows = [
   {
     id: 154,
     name: "MGS4",
-    query: "Metal Gear Solid 4 - Victory Song",
+    query: "Metal Gear Solid 4",
     year: 2007,
     genre: "Thriller",
     youtubeId: "1xROQUdmP3U",
@@ -1129,10 +1129,10 @@ export const animeShows = [
   {
     id: 160,
     name: "fate ubw",
-    query: "fate ubw opening",
+    query: "Fate Stay Night Ending 24 (Kimi to no Ashita)",
     year: 2007,
     genre: "Thriller",
-    youtubeId: "7vZp3yGxZXE",
+    youtubeId: "JiOHxtgqgnM",
   },
   {
     id: 161,
