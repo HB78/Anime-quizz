@@ -4,6 +4,8 @@ import { QuizQuestion } from "@/hooks/use-quiz";
 import { useQuizGame } from "@/hooks/use-quiz-game";
 import ReactPlayer from "react-player";
 
+import { MeshBackground } from "./MeshBackground";
+
 import { QuizHeader } from "./QuizHeader";
 import { CountdownPhase } from "./phases/CountdownPhase";
 import { FinishedPhase } from "./phases/FinishedPhase";
@@ -44,11 +46,8 @@ export function QuizGame({
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-blue-950 px-6">
-      {/* Background glows */}
-      <div className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-blue-500/8 blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 top-2/3 h-96 w-96 rounded-full bg-purple-500/8 blur-3xl" />
-      <div className="pointer-events-none absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
+    <main className="relative flex h-screen items-center justify-center overflow-hidden bg-[#050505] px-6">
+      <MeshBackground />
 
       {/* Audio Player caché */}
       {game.currentQuestion && (
@@ -66,12 +65,17 @@ export function QuizGame({
         </div>
       )}
 
-      <div className="relative w-full max-w-2xl mt-12 transition-all">
+      {(game.phase === "countdown" || game.phase === "playing" || game.phase === "paused") && (
         <QuizHeader
           currentIndex={game.currentIndex}
           totalQuestions={game.totalQuestions}
           type={type}
+          menuHref={menuHref}
+          status={game.phase === "paused" ? "EN PAUSE" : undefined}
         />
+      )}
+
+      <div className="relative z-10 w-full max-w-2xl mt-12 transition-all">
 
         {game.phase === "ready" && (
           <ReadyPhase

@@ -10,7 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --animate-countdown-scale: countdown-scale 1s ease-in-out infinite;
+  --animate-mesh-drift: mesh-drift 20s ease-in-out infinite;
+  --animate-countdown-scale: countdown-scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-countdown-ghost: countdown-ghost 1s ease-out both;
   --animate-viz-bar: viz-bar 0.8s ease-in-out infinite alternate;
   --animate-marquee: marquee-scroll 35s linear infinite;
   --animate-card-reveal: card-reveal 0.6s both;
@@ -20,9 +22,20 @@
 
 /* ===== Keyframes ===== */
 
+@keyframes mesh-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(8%, -6%) scale(1.08); }
+  66%      { transform: translate(-6%, 6%) scale(1.04); }
+}
+
 @keyframes countdown-scale {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.12); }
+  0%   { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes countdown-ghost {
+  0%   { transform: scale(1);   opacity: 0.6; filter: blur(0px); }
+  100% { transform: scale(1.6); opacity: 0;   filter: blur(8px); }
 }
 
 @keyframes viz-bar {
