@@ -23,15 +23,15 @@ export const animeShows = [
     query: "My Hero Academia UST - Kyoui to no Koubou (No Drums)",
     year: 2016,
     genre: "Action",
-    youtubeId: "MFTlL0xFqp8",
+    youtubeId: "JulZjmLfLw4",
   },
   {
     id: 4,
     name: "One Piece",
-    query: "One Piece Soundtrack - Gold And Oden HD",
+    query: "One Piece - The Fight Continues - Shanks Theme 2",
     year: 1999,
     genre: "Adventure",
-    youtubeId: "6FscTa_Nqwo",
+    youtubeId: "IKpfyyZL-mk",
   },
   {
     id: 5,
@@ -52,10 +52,10 @@ export const animeShows = [
   {
     id: 7,
     name: "Dragon Ball Z",
-    query: "Dragon Ball Z - BP∞ Battle Point Unlimited",
+    query: "Dragon Ball Z - We Were Angels",
     year: 1989,
     genre: "Action",
-    youtubeId: "eMYt9sGOcTU",
+    youtubeId: "U5u5n5qsLSE",
   },
   {
     id: 8,
@@ -76,10 +76,10 @@ export const animeShows = [
   {
     id: 10,
     name: "Jujutsu Kaisen",
-    query: "Jujutsu Kaisen OST - Yuuji's Rage (One’s Innermost Thoughts)",
+    query: "Jujutsu Kaisen - Ending 5 | | UHD Creditless | Subtitles",
     year: 2020,
     genre: "Action",
-    youtubeId: "bkpX2kfHprc",
+    youtubeId: "-l4Oe-2qWx4",
   },
 
   // === SEINEN ===
@@ -94,18 +94,18 @@ export const animeShows = [
   {
     id: 12,
     name: "Tokyo Ghoul",
-    query: "Tokyo Ghoul - Ending | Saints",
+    query: "Tokyo Ghoul √A - Ending | Kisetsu wa Tsugitsugi Shinde Iku",
     year: 2014,
     genre: "Horror",
-    youtubeId: "kSkSvK6Zx_I",
+    youtubeId: "MAw59zSbGqs",
   },
   {
     id: 13,
     name: "Parasyte",
-    query: "[OST] Parasyte - I AM",
+    query: "Parasyte the Maxim - OST - Solitude",
     year: 2014,
     genre: "Horror",
-    youtubeId: "vxLbI80RdYs",
+    youtubeId: "8FqbTz9N5Do",
   },
   {
     id: 15,
@@ -185,28 +185,28 @@ export const animeShows = [
   {
     id: 30,
     name: "Violet Evergarden",
-    query: "violet evergarden opening sincerely",
+    query: "Violet Evergarden Ending full[]Michishirube[]",
     year: 2018,
     genre: "Drama",
-    youtubeId: "ZAKuyZEyZjY",
+    youtubeId: "mvwEX2XOvW8",
   },
 
   // === ISEKAI / FANTASY ===
   {
     id: 31,
     name: "Sword Art Online",
-    query: "Gleam Eyes OST (sword art online) We have to defeat it.",
+    query: "Sword Art Online Alicization: Find Your Sword In This Land OST",
     year: 2012,
     genre: "Isekai",
-    youtubeId: "1h994kmCrpI",
+    youtubeId: "LGqp-uktNzc",
   },
   {
     id: 32,
     name: "Re:Zero",
-    query: "Re:ZERO -Starting Life in Another World- Season 3 Opening",
+    query: "「Creditless」Re:ZERO Season 4 OP / Opening「UHD 60FPS",
     year: 2016,
     genre: "Isekai",
-    youtubeId: "hCxZx7uHO1I",
+    youtubeId: "BIz3B88JbNc",
   },
   {
     id: 33,
@@ -285,10 +285,10 @@ export const animeShows = [
   {
     id: 42,
     name: "Kuroko no Basket",
-    query: "Kuroko no Basket Season 2 - OST 05 Imminence",
+    query: "Kuroko's Basketball - Ending 4 | FANTASTIC TUNE",
     year: 2012,
     genre: "Sports",
-    youtubeId: "aeZKSOYh5KE",
+    youtubeId: "Miq-Zia_zLk",
   },
   {
     id: 43,
@@ -313,7 +313,7 @@ export const animeShows = [
     query: "Hajime No Ippo OST 20 - Arayashiki [HD]",
     year: 2000,
     genre: "Sports",
-    youtubeId: "lX8mthPC5vY",
+    youtubeId: "y4K1pofxhpA",
   },
   {
     id: 47,
@@ -343,11 +343,11 @@ export const animeShows = [
   // === MECHA / SCI-FI ===
   {
     id: 51,
-    name: "Neon Genesis Evangelion",
+    name: "End of Evangelion",
     query: "Kokoro Yo Genshi ni Modoru - Evangelion Alternate Opening 2",
     year: 1995,
     genre: "Mecha",
-    youtubeId: "V1MdqanqJ5o",
+    youtubeId: "086uhG3Rf3U",
   },
   {
     id: 54,
@@ -368,10 +368,10 @@ export const animeShows = [
   {
     id: 56,
     name: "Darling in the Franxx",
-    query: "darling in the franxx opening kiss of death",
+    query: "DARLING in the FRANXX - Ending 5 | Escape",
     year: 2018,
     genre: "Mecha",
-    youtubeId: "A4kLcDWBYcQ",
+    youtubeId: "N7VjqtrRnbU",
   },
   {
     id: 58,
@@ -421,7 +421,7 @@ export const animeShows = [
     query: "yugioh opening 5 OVERLAP",
     year: 2000,
     genre: "Adventure",
-    youtubeId: "o_Z0AhbSQxo",
+    youtubeId: "mpi9iNlNzUw",
   },
   {
     id: 64,
@@ -528,7 +528,7 @@ export const animeShows = [
     query: "Dragon Smasher",
     year: 2023,
     genre: "Fantasy",
-    youtubeId: "lrBUdDDHflU",
+    youtubeId: "IvK62Isjc5s",
   },
   {
     id: 78,
@@ -541,10 +541,10 @@ export const animeShows = [
   {
     id: 79,
     name: "Hell's Paradise",
-    query: "hells paradise opening work",
+    query: "hells paradise ending",
     year: 2023,
     genre: "Action",
-    youtubeId: "04WuoQMhhxw",
+    youtubeId: "wKQOZbo9_Uk",
   },
   {
     id: 80,
@@ -623,20 +623,20 @@ export const animeShows = [
   {
     id: 90,
     name: "Deadman Wonderland",
-    query: "deadman wonderland opening one reason",
+    query: "Deadman Wonderland ED 1 [4K / 60FPS / Creditless]",
     year: 2011,
     genre: "Action",
-    youtubeId: "2pZ-UpjtlXY",
+    youtubeId: "wD7pwXF8otA",
   },
 
   // === DIVERS ===
   {
     id: 92,
     name: "Dr. Stone",
-    query: "'A Dogfight Theme'『ドクターストーン』Dr. Stone S4 EP10 OST Cover",
+    query: "'Xeno's Theme'『ドクターストーン』Dr. Stone S4 EP4 OST Cover",
     year: 2019,
     genre: "Sci-Fi",
-    youtubeId: "3s6odgnJv6c",
+    youtubeId: "O7MS7u_9gPA",
   },
   {
     id: 93,
@@ -649,10 +649,10 @@ export const animeShows = [
   {
     id: 94,
     name: "Assassination Classroom",
-    query: "assassination classroom opening seishun satsubatsuron",
+    query: "Assassination Classroom Season 2 Opening | QUESTION",
     year: 2015,
     genre: "Action",
-    youtubeId: "A41jCFkGiX0",
+    youtubeId: "iug12DnMNHQ",
   },
   {
     id: 95,
@@ -665,10 +665,10 @@ export const animeShows = [
   {
     id: 96,
     name: "Fire Force",
-    query: "fire force opening inferno",
+    query: "「Creditless」Fire Force OP / Opening 5「UHD 60FPS」",
     year: 2019,
     genre: "Action",
-    youtubeId: "JBqxVX_LXvk",
+    youtubeId: "qSyh3T4nNf0",
   },
   {
     id: 97,
@@ -714,10 +714,10 @@ export const animeShows = [
   {
     id: 103,
     name: "Hellsing Ultimate",
-    query: "gradus vita",
+    query: "Monster of God ost",
     year: 2006,
     genre: "Action",
-    youtubeId: "1d9hMAxKJ5Q",
+    youtubeId: "uN1v5fAddHo",
   },
   {
     id: 104,
@@ -812,11 +812,10 @@ export const animeShows = [
   {
     id: 118,
     name: "Dragon Ball Super",
-    query:
-      "Dragon Ball Super OST - Vegeta’s New Form (Original SoundTrack) Quality HD",
+    query: "Dragon Ball Super (Ending 10) By a 70cm Square Window",
     year: 2018,
     genre: "Action",
-    youtubeId: "du_SYMFfbG4",
+    youtubeId: "mbAMtrhhwf0",
   },
   {
     id: 119,
@@ -894,18 +893,19 @@ export const animeShows = [
   {
     id: 128,
     name: "Erased",
-    query: "erased opening re re",
+    query:
+      "Erased - Ending 【Sore wa Chiisana Hikari no Youna】 4K / UHD Creditless | CC",
     year: 2016,
     genre: "Thriller",
-    youtubeId: "fodAJ-1dN3I",
+    youtubeId: "J9D9jjCtu90",
   },
   {
     id: 129,
     name: "Tokyo Revengers",
-    query: "tokyo revengers opening cry baby",
+    query: "Tokyo Revengers - Ending 2 | Tokyo Wonder",
     year: 2021,
     genre: "Action",
-    youtubeId: "O1bhZgkC4Gw",
+    youtubeId: "EqiPN0t54Uo",
   },
   {
     id: 130,
@@ -990,18 +990,18 @@ export const animeShows = [
   {
     id: 140,
     name: "Katekyo Hitman Reborn!",
-    query: "Katekyo Hitman Reborn! OP 8 - Listen to the Stereo!!",
+    query: "Katekyo Hitman Reborn Opening 4 (HQ)",
     year: 2006,
     genre: "Action",
-    youtubeId: "I8uwTNmglrQ",
+    youtubeId: "WQ0_-vlj8PY",
   },
   {
     id: 141,
     name: "Magical Doremi",
-    query: "Magical Doremi - Générique saison 3 (Qualité DVD jp)",
+    query: "Magical Doremi - Générique saison 1 (Qualité DVD jp)",
     year: 2002,
     genre: "Action",
-    youtubeId: "WazT_uV9L2o",
+    youtubeId: "9CioAYtz4iM",
   },
   {
     id: 142,
@@ -1169,10 +1169,34 @@ export const animeShows = [
   },
   {
     id: 181,
-    name: "Golden Kamuy",
-    query: "Golden Kamuy Opening",
+    name: "Golden Kamui",
+    query: "Golden Kamui Opening",
     year: 2018,
     genre: "Adventure",
     youtubeId: "QahFijEd3hY",
+  },
+  {
+    id: 182,
+    name: "Initial D",
+    query: "Initial D - Deja Vu",
+    year: 2018,
+    genre: "Adventure",
+    youtubeId: "dv13gl0a-FA",
+  },
+  {
+    id: 183,
+    name: "GTO",
+    query: "GTO Opening 1 - Driver's High",
+    year: 2018,
+    genre: "Adventure",
+    youtubeId: "2JGl6UzfPkE",
+  },
+  {
+    id: 184,
+    name: "YU YU HAKUSHO",
+    query: "YU YU HAKUSHO Opening 1",
+    year: 2018,
+    genre: "Adventure",
+    youtubeId: "pK-9pAEmN9g",
   },
 ];

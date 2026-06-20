@@ -41,10 +41,7 @@ export function FinishedPhase({
 
       {/* Titre */}
       <h1 className="mb-6 text-7xl font-bold leading-[0.9] tracking-tighter text-white md:text-8xl">
-        <span className="block">Bien</span>
-        <span className="block" style={{ color: ACCENT }}>
-          joué
-        </span>
+        Bien <span style={{ color: ACCENT }}>joué</span>
       </h1>
 
       <p className="mb-14 max-w-md text-[17px] leading-relaxed text-white/60">

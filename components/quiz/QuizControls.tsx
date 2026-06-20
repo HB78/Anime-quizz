@@ -14,51 +14,57 @@ export function QuizControls({
   onReplay,
 }: QuizControlsProps) {
   return (
-    <div className="flex items-end justify-center gap-6">
-      <div className="flex flex-col items-center gap-1.5">
+    <div className="flex items-end justify-center gap-7">
+      {/* Action secondaire : Rejouer */}
+      <div className="flex flex-col items-center gap-2">
+        <button
+          onClick={onReplay}
+          aria-label="Rejouer l'extrait"
+          className="group flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-blue-400/50 bg-blue-500/15 text-white transition-all duration-200 hover:bg-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:hover:scale-105 active:scale-95"
+        >
+          <RotateCcw className="h-6 w-6 text-blue-300 transition-colors group-hover:text-blue-200" />
+        </button>
+        <span className="text-[13px] font-medium text-white/75">Rejouer</span>
+      </div>
+
+      {/* Action principale : Pause / Reprendre — plus grande */}
+      <div className="flex flex-col items-center gap-2">
         <button
           onClick={onTogglePause}
-          className={`cursor-pointer relative flex h-14 w-14 items-center justify-center rounded-full border text-white shadow-lg transition-all duration-300 hover:scale-110 ${
+          aria-label={isPaused ? "Reprendre la lecture" : "Mettre en pause"}
+          className={`group relative flex h-[72px] w-[72px] cursor-pointer items-center justify-center rounded-full border-2 text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:hover:scale-105 active:scale-95 ${
             isPaused
-              ? "border-green-500/50 bg-green-500/20 hover:bg-green-500/30"
-              : "border-yellow-500/50 bg-yellow-500/20 hover:bg-yellow-500/30"
+              ? "border-emerald-400/70 bg-emerald-500/25 shadow-[0_0_30px_-8px] shadow-emerald-500/60 hover:bg-emerald-500/35 focus-visible:ring-emerald-400"
+              : "border-amber-400/70 bg-amber-500/25 shadow-[0_0_30px_-8px] shadow-amber-500/60 hover:bg-amber-500/35 focus-visible:ring-amber-400"
           }`}
-          title={isPaused ? "Reprendre" : "Pause"}
         >
           {!isPaused && (
-            <span className="absolute inset-0 animate-ping rounded-full border border-yellow-400/30" />
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full border-2 border-amber-300/40 motion-safe:animate-ping"
+            />
           )}
           {isPaused ? (
-            <Play className="h-6 w-6 text-green-400" />
+            <Play className="h-8 w-8 fill-emerald-300 text-emerald-300" />
           ) : (
-            <Pause className="h-6 w-6 text-yellow-400" />
+            <Pause className="h-8 w-8 fill-amber-300 text-amber-300" />
           )}
         </button>
-        <span className="text-xs text-zinc-500">
-          {isPaused ? "Play" : "Pause"}
+        <span className="text-sm font-semibold text-white/90">
+          {isPaused ? "Reprendre" : "Pause"}
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-1.5">
+      {/* Action secondaire : Passer */}
+      <div className="flex flex-col items-center gap-2">
         <button
           onClick={onSkip}
-          className="cursor-pointer flex h-14 w-14 items-center justify-center rounded-full border border-purple-500/50 bg-purple-500/20 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-purple-500/30"
-          title="Skip"
+          aria-label="Passer à l'extrait suivant"
+          className="group flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-purple-400/50 bg-purple-500/15 text-white transition-all duration-200 hover:bg-purple-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-safe:hover:scale-105 active:scale-95"
         >
-          <SkipForward className="h-6 w-6 text-purple-400" />
+          <SkipForward className="h-6 w-6 text-purple-300 transition-colors group-hover:text-purple-200" />
         </button>
-        <span className="text-xs text-zinc-500">Skip</span>
-      </div>
-
-      <div className="flex flex-col items-center gap-1.5">
-        <button
-          onClick={onReplay}
-          className="cursor-pointer flex h-14 w-14 items-center justify-center rounded-full border border-blue-500/50 bg-blue-500/20 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-500/30"
-          title="Rejouer"
-        >
-          <RotateCcw className="h-6 w-6 text-blue-400" />
-        </button>
-        <span className="text-xs text-zinc-500">Rejouer</span>
+        <span className="text-[13px] font-medium text-white/75">Passer</span>
       </div>
     </div>
   );

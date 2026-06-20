@@ -36,23 +36,23 @@ export function PlayingPhase({
   return (
     <div
       className={`text-center transition-opacity duration-500 ${
-        isPaused ? "opacity-60" : "opacity-100"
+        isPaused ? "opacity-70" : "opacity-100"
       }`}
     >
       {/* Statut */}
-      <div className="mb-9 flex items-center justify-center gap-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.4em]">
+      <div className="mb-9 flex items-center justify-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-[0.25em]">
         {isPaused ? (
-          <div className="flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
-            <span className="text-white/50">En pause</span>
+          <div className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+            <span className="text-white/80">En pause</span>
           </div>
         ) : isBuffering ? (
-          <div className="flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-white/40" />
-            <span className="text-white/50">Synchronisation...</span>
+          <div className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2">
+            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-white/70" />
+            <span className="text-white/80">Synchronisation...</span>
           </div>
         ) : (
-          <span className="flex items-center gap-2.5 text-white/55">
+          <span className="flex items-center gap-2.5 text-white/85">
             <Volume2
               className="h-4 w-4 animate-pulse"
               style={{ color: ACCENT }}
@@ -67,7 +67,10 @@ export function PlayingPhase({
         {/* Halo */}
         <div
           className="absolute -inset-10 rounded-full blur-3xl"
-          style={{ background: `${ringColor}40`, opacity: isPaused ? 0.3 : 0.6 }}
+          style={{
+            background: `${ringColor}40`,
+            opacity: isPaused ? 0.3 : 0.6,
+          }}
         />
         {/* SVG */}
         <svg width="280" height="280" className="absolute -rotate-90">
@@ -76,7 +79,7 @@ export function PlayingPhase({
             cy="140"
             r={RADIUS}
             fill="none"
-            stroke="rgba(255,255,255,0.08)"
+            stroke="rgba(255,255,255,0.12)"
             strokeWidth="2"
           />
           <circle
@@ -100,7 +103,7 @@ export function PlayingPhase({
           >
             {countdown}
           </span>
-          <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.3em] text-white/40">
+          <span className="mt-1 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white/60">
             secondes
           </span>
         </div>
