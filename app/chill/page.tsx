@@ -9,7 +9,10 @@ import {
   Layers,
   Library,
   Music,
+  Timer,
+  Trophy,
   Tv,
+  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -89,10 +92,10 @@ const modes: ModeConfig[] = [
 const primaryModes = modes.slice(0, 2);
 const secondaryModes = modes.slice(2);
 
-const stats = [
-  { icon: "🎵", label: "Bibliothèque", value: "12 Titres Aléatoires" },
-  { icon: "⏱️", label: "Chrono", value: "20s par Round" },
-  { icon: "🏆", label: "Défi", value: "Reconnaissance" },
+const stats: { icon: LucideIcon; label: string; value: string }[] = [
+  { icon: Music, label: "Bibliothèque", value: "12 Titres Aléatoires" },
+  { icon: Timer, label: "Chrono", value: "20s par Round" },
+  { icon: Trophy, label: "Défi", value: "Reconnaissance" },
 ];
 
 function ModeCard({
@@ -297,13 +300,15 @@ export default function ChillPage() {
           aria-label="Informations du quiz"
           className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3"
         >
-          {stats.map((stat, i) => (
+          {stats.map((stat, i) => {
+            const StatIcon = stat.icon;
+            return (
             <div
               key={i}
               className="flex items-center gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-6 backdrop-blur-sm transition-colors hover:bg-white/[0.04]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-xl">
-                {stat.icon}
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-zinc-300">
+                <StatIcon aria-hidden="true" size={20} />
               </div>
               <div>
                 <p className="mb-0.5 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500">
@@ -314,7 +319,8 @@ export default function ChillPage() {
                 </p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </section>
 
         {/* Footer */}

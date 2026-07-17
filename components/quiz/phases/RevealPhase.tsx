@@ -105,7 +105,7 @@ export function RevealPhase({ question }: RevealPhaseProps) {
           {/* Sous-titre si différent du titre */}
           {question.correctAnswer !== question.source && (
             <div
-              className="mb-6 text-xl font-normal text-white/65 md:text-2xl"
+              className="mb-6 text-xl font-normal text-white/80 md:text-2xl"
               style={{ animation: "reveal-letter-in 700ms 350ms ease both" }}
             >
               {question.correctAnswer}

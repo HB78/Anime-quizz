@@ -112,7 +112,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-300">
             Entraînez votre oreille musicale en écoutant les openings et endings
             de vos animes préférés.
           </p>
@@ -155,7 +155,7 @@ export default function Home() {
             <h3 className="text-lg font-semibold text-zinc-300">
               Aucun résultat
             </h3>
-            <p className="mt-1 text-sm text-zinc-500">
+            <p className="mt-1 text-sm text-zinc-300">
               Aucun anime ne correspond à &quot;{searchQuery}&quot;
             </p>
           </div>
@@ -170,11 +170,11 @@ export default function Home() {
                   <span className="text-sm font-medium">Chargement...</span>
                 </div>
               ) : hasNextPage ? (
-                <p className="text-sm text-zinc-500">
+                <p className="text-sm text-zinc-400">
                   Continuez de scroller pour charger plus
                 </p>
               ) : (
-                <div className="rounded-full border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm text-zinc-400 shadow-sm">
+                <div className="rounded-full border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm text-zinc-300 shadow-sm">
                   Fin de la base de données
                 </div>
               )}

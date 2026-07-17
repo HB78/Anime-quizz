@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Internal skill scripts — not part of the app source.
+    ".claude/skills/**",
+    ".agents/skills/**",
   ]),
 ]);
 

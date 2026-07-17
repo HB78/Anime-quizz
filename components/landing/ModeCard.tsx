@@ -1,5 +1,6 @@
 "use client";
 
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import AudioViz from "./AudioViz";
@@ -10,7 +11,7 @@ import AudioViz from "./AudioViz";
 
 export default function ModeCard({
   href,
-  emoji,
+  icon: Icon,
   title,
   description,
   cta,
@@ -22,7 +23,7 @@ export default function ModeCard({
   delay,
 }: {
   href: string;
-  emoji: string;
+  icon: LucideIcon;
   title: string;
   description: string;
   cta: string;
@@ -48,10 +49,10 @@ export default function ModeCard({
         className={`relative overflow-hidden rounded-2xl border border-white/10 ${gradientClass} p-8 transition-all duration-500 hover:scale-105 ${borderHoverClass} hover:shadow-lg ${shadowClass}`}
       >
         {/* Icône — décoratif */}
-        <span className="mb-4 block text-4xl" role="img" aria-hidden="true">{emoji}</span>
+        <Icon aria-hidden="true" className={`mb-4 h-9 w-9 ${accentClass}`} strokeWidth={1.5} />
         {/* Texte */}
         <h3 className="mb-2 text-2xl font-bold text-white">{title}</h3>
-        <p className="mb-5 text-sm leading-relaxed text-zinc-400">
+        <p className="mb-5 text-sm leading-relaxed text-zinc-300">
           {description}
         </p>
         {/* CTA */}

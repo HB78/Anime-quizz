@@ -77,7 +77,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="animate-fade-up mx-auto mb-10 max-w-lg font-mono text-sm leading-loose text-zinc-400"
+          className="animate-fade-up mx-auto mb-10 max-w-lg font-mono text-sm leading-loose text-zinc-300"
           style={{ animationDelay: "0.6s" }}
         >
           Teste tes connaissances sur les{" "}

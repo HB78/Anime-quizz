@@ -36,7 +36,7 @@ export default function HowItWorksSection() {
               <h3 className="mb-2 font-display text-xl text-white">
                 {s.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-400">{s.desc}</p>
+              <p className="text-sm leading-relaxed text-zinc-300">{s.desc}</p>
             </div>
           ))}
         </div>

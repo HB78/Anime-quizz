@@ -75,7 +75,7 @@ export function useQuizGame({
   const handleQuestionEndRef = useRef<() => void>(() => {});
 
   // Démarre le timer de question
-  const startCountdownTimer = useCallback((startValue: number) => {
+  const startCountdownTimer = useCallback(() => {
     if (countdownIntervalRef.current) {
       clearInterval(countdownIntervalRef.current);
       countdownIntervalRef.current = null;
@@ -116,11 +116,11 @@ export function useQuizGame({
     setPhase((prev) => {
       if (prev === "playing") {
         setIsBuffering(false);
-        startCountdownTimer(questionDuration);
+        startCountdownTimer();
       }
       return prev;
     });
-  }, [questionDuration, startCountdownTimer]);
+  }, [startCountdownTimer]);
 
   // Démarre le countdown initial (3, 2, 1...)
   const startCountdownPhase = useCallback(() => {
@@ -186,9 +186,9 @@ export function useQuizGame({
     } else if (phase === "paused") {
       setPhase("playing");
       setIsPlaying(true);
-      startCountdownTimer(countdown);
+      startCountdownTimer();
     }
-  }, [phase, countdown, isBuffering, startCountdownTimer]);
+  }, [phase, isBuffering, startCountdownTimer]);
 
   const skip = useCallback(() => {
     clearAllTimers();

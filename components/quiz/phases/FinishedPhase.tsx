@@ -44,7 +44,7 @@ export function FinishedPhase({
         Bien <span style={{ color: ACCENT }}>joué</span>
       </h1>
 
-      <p className="mb-14 max-w-md text-[17px] leading-relaxed text-white/60">
+      <p className="mb-14 max-w-md text-[17px] leading-relaxed text-white/75">
         Tu viens d&apos;écouter{" "}
         <span className="font-semibold text-white">
           {questionCount} extraits

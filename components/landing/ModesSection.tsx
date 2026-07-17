@@ -1,3 +1,5 @@
+import { Headphones, Library, Music } from "lucide-react";
+
 import ModeCard from "./ModeCard";
 
 /* Section modes de jeu — présente les 3 modes (Quiz, Chill, Training)
@@ -19,7 +21,7 @@ export default function ModesSection() {
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           <ModeCard
             href="/quiz"
-            emoji="🎵"
+            icon={Music}
             title="Quiz"
             description="Le défi ultime pour les otakus. 15 questions, 10 secondes — reconnais les openings et endings d'anime."
             cta="Jouer"
@@ -32,7 +34,7 @@ export default function ModesSection() {
           />
           <ModeCard
             href="/chill"
-            emoji="🎧"
+            icon={Headphones}
             title="Chill"
             description="Anime, films, séries — devine les soundtracks iconiques de tous les univers. 20 secondes, accessible à tous."
             cta="Jouer"
@@ -45,7 +47,7 @@ export default function ModesSection() {
           />
           <ModeCard
             href="/training"
-            emoji="📚"
+            icon={Library}
             title="Training"
             description="Explore la base de données complète et entraîne-toi à ton rythme sur n'importe quel titre."
             cta="Explorer"

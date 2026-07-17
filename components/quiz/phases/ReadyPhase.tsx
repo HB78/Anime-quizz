@@ -71,7 +71,7 @@ export function ReadyPhase({ questionCount, type, onStart, menuHref }: ReadyPhas
       </h1>
 
       {/* Subtitle */}
-      <p className="mb-14 max-w-md text-[17px] leading-relaxed text-white/60">
+      <p className="mb-14 max-w-md text-[17px] leading-relaxed text-white/75">
         {copy.subtitle(questionCount)}
       </p>
 

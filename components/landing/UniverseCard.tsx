@@ -49,7 +49,7 @@ export default function UniverseCard({
 
       {/* Texte */}
       <h3 className="mb-2 font-display text-2xl text-white">{title}</h3>
-      <p className="mb-4 text-sm leading-relaxed text-zinc-400">
+      <p className="mb-4 text-sm leading-relaxed text-zinc-300">
         {description}
       </p>
 

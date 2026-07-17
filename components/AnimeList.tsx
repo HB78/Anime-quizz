@@ -101,7 +101,7 @@ function ThemeCard({ theme }: { theme: TransformedTheme }) {
         </p>
 
         {theme.artists.length > 0 && (
-          <p className="truncate text-xs text-zinc-400">
+          <p className="truncate text-xs text-zinc-300">
             {theme.artists.join(", ")}
           </p>
         )}

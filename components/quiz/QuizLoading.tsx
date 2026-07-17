@@ -17,7 +17,7 @@ export function QuizLoading({ type = "opening" }: QuizLoadingProps) {
           <Music className="absolute h-7 w-7 text-blue-300" />
         </div>
         <p className="text-2xl font-bold text-white">Génération du quiz...</p>
-        <p className="mt-2 text-zinc-400">
+        <p className="mt-2 text-zinc-300">
           Sélection de 15 {type}s aléatoires avec audio
         </p>
       </div>

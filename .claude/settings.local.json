@@ -5,7 +5,13 @@
       "Bash(Select-Object FullName)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\batto\\\\Desktop\\\\integration\" -Recurse -File)",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(xargs grep -l \"console\\\\.\")",
+      "Bash(xargs grep -l \"@ts-ignore\\\\|any\\\\b\")",
+      "Bash(xargs grep -l \"error\\\\|Error\")",
+      "Bash(rm -rf .next)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"=== EXIT: $? ===\")"
     ]
   }
 }

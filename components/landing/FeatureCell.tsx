@@ -19,7 +19,7 @@ export default function FeatureCell({
         <span role="img" aria-hidden="true">{icon}</span>
       </div>
       <h3 className="mb-2 font-display text-lg font-bold text-white">{title}</h3>
-      <p className="text-sm leading-relaxed text-zinc-400">{desc}</p>
+      <p className="text-sm leading-relaxed text-zinc-300">{desc}</p>
     </div>
   );
 }

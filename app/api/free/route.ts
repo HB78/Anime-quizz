@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 /* =======================
    Interfaces API
@@ -73,7 +73,7 @@ interface ApiResponse {
    GET
 ======================= */
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const allThemes: ApiAnimeTheme[] = [];
     const maxThemes = 4000;

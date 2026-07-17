@@ -103,7 +103,7 @@ export function PlayingPhase({
           >
             {countdown}
           </span>
-          <span className="mt-1 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white/60">
+          <span className="mt-1 font-mono text-xs font-medium uppercase tracking-[0.2em] text-white/70">
             secondes
           </span>
         </div>

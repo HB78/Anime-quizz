@@ -1,6 +1,17 @@
 "use client";
 
-import { ChevronRight, Sparkles, Trophy, Zap } from "lucide-react";
+import {
+  CheckCircle2,
+  ChevronRight,
+  Clapperboard,
+  Drama,
+  Music,
+  Sparkles,
+  Timer,
+  Trophy,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -10,7 +21,7 @@ const modes: {
   key: QuizMode;
   label: string;
   subLabel: string;
-  emoji: string;
+  icon: LucideIcon;
   description: string;
   gradient: string;
   shadow: string;
@@ -21,7 +32,7 @@ const modes: {
     key: "opening",
     label: "Openings",
     subLabel: "OP Theme",
-    emoji: "🎬",
+    icon: Clapperboard,
     description:
       "Les génériques de début qui te donnent des frissons. Sauras-tu les reconnaître ?",
     gradient: "from-blue-500 to-cyan-500",
@@ -33,7 +44,7 @@ const modes: {
     key: "ending",
     label: "Endings",
     subLabel: "ED Theme",
-    emoji: "🎭",
+    icon: Drama,
     description:
       "Les génériques de fin souvent sous-estimés. Montre que tu es un vrai connaisseur.",
     gradient: "from-purple-500 to-pink-500",
@@ -43,17 +54,17 @@ const modes: {
   },
 ];
 
-const rules = [
+const rules: { icon: LucideIcon; text: string }[] = [
   {
-    icon: "🎵",
+    icon: Music,
     text: "15 questions aléatoires tirées de la base de données",
   },
   {
-    icon: "⏱️",
+    icon: Timer,
     text: "10 secondes pour tester ton oreille et reconnaître le thème",
   },
   {
-    icon: "✅",
+    icon: CheckCircle2,
     text: "La réponse apparaît après chaque question pour apprendre",
   },
 ];
@@ -91,7 +102,7 @@ export default function QuizSelectionPage() {
                 Animé
               </span>
             </h1>
-            <p className="mx-auto max-w-lg text-lg leading-relaxed text-zinc-400">
+            <p className="mx-auto max-w-lg text-lg leading-relaxed text-zinc-300">
               Plonge dans l&apos;univers musical de tes animés préférées.
               <br />
               C&apos;est un mode hardcore réservé aux fanatiques des animés.
@@ -100,7 +111,9 @@ export default function QuizSelectionPage() {
 
           {/* Mode Selection */}
           <div className="grid gap-6 md:grid-cols-2">
-            {modes.map((m) => (
+            {modes.map((m) => {
+              const ModeIcon = m.icon;
+              return (
               <button
                 key={m.key}
                 onClick={() => setMode(m.key)}
@@ -141,11 +154,11 @@ export default function QuizSelectionPage() {
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-center justify-between">
                     <div
-                      className={`text-5xl transition-transform duration-500 ${
+                      className={`transition-transform duration-500 ${m.accentColor} ${
                         isHovering === m.key ? "rotate-12 scale-110" : ""
                       }`}
                     >
-                      {m.emoji}
+                      <ModeIcon aria-hidden="true" className="h-12 w-12" strokeWidth={1.5} />
                     </div>
                     <div
                       className={`text-xs font-mono font-bold uppercase tracking-widest opacity-40 ${m.accentColor}`}
@@ -158,7 +171,7 @@ export default function QuizSelectionPage() {
                     <h3 className="mb-1 text-3xl font-bold text-white">
                       {m.label}
                     </h3>
-                    <p className="pr-8 text-sm leading-relaxed text-zinc-400">
+                    <p className="pr-8 text-sm leading-relaxed text-zinc-300">
                       {m.description}
                     </p>
                   </div>
@@ -171,7 +184,8 @@ export default function QuizSelectionPage() {
                   />
                 </div>
               </button>
-            ))}
+              );
+            })}
           </div>
 
           {/* Launch + Info */}
@@ -204,16 +218,19 @@ export default function QuizSelectionPage() {
                   Règles du Jeu
                 </h4>
                 <div className="space-y-4">
-                  {rules.map((rule, idx) => (
+                  {rules.map((rule, idx) => {
+                    const RuleIcon = rule.icon;
+                    return (
                     <div key={idx} className="group flex items-start gap-4">
-                      <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800 text-sm transition-colors group-hover:border-zinc-600">
-                        {rule.icon}
+                      <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800 text-zinc-300 transition-colors group-hover:border-zinc-600">
+                        <RuleIcon aria-hidden="true" size={16} />
                       </div>
-                      <p className="py-1 text-sm leading-relaxed text-zinc-400">
+                      <p className="py-1 text-sm leading-relaxed text-zinc-300">
                         {rule.text}
                       </p>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>

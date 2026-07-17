@@ -82,12 +82,16 @@ export async function fetchAnimePage(
   const data: ApiResponse = await res.json();
 
   // Grouper par anime
+  //on cree un classeur vide ou ranger les animes par id
   const animeMap = new Map<number, TransformedAnime>();
 
   for (const theme of data.animethemes ?? []) {
+    //on prends l'id de l'anime
+    //on l'utilise si l'anime n'existe pas encore dans le classeur
     const animeId = theme.anime.id;
 
     if (!animeMap.has(animeId)) {
+      //si l'anime n'existe pas encore dans le classeur, on le cree et on le met dans le classeur
       animeMap.set(animeId, {
         id: animeId,
         name: theme.anime.name,
@@ -98,9 +102,15 @@ export async function fetchAnimePage(
         endings: [],
       });
     }
-
+    //on recupere l'anime du classeur avec l'id
+    //on recupere l'id qu'on vient de rajouter ou qui existait deja a cette etape
+    //la fiche anime est cree qu'une seule fois
+    //si l'anime existe deja, on recupere juste la fiche anime du classeur
     const anime = animeMap.get(animeId)!;
 
+    //on cree un objet theme transformé avec les infos qu'on veut garder
+    //on recupere les infos du theme et on les met dans un objet TransformedTheme
+    //l'objet et recree a chaque fois qu'il y a un nouveau son puis il est integrer dans animmap
     const transformedTheme: TransformedTheme = {
       type: theme.type,
       sequence: theme.sequence,
